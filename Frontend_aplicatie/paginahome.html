@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShipMate - Home</title>
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/ionicons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', Helvetica, sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #ff5722;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        header .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        header .menu ul {
+            display: flex;
+            list-style: none;
+        }
+        header .menu ul li {
+            margin-left: 20px;
+        }
+        header .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        header .menu ul li a:hover {
+            color: #ffe6e6;
+        }
+        .main-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 50px;
+            background: url("static/home_background.jpeg") center/cover no-repeat;
+            height: 100vh;
+            color: white;
+        }
+        .main-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .main-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+        .btn {
+            padding: 10px 30px;
+            background: #ff5722;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #e64a19;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background: #f4f4f9;
+        }
+        .feature {
+            text-align: center;
+            max-width: 300px;
+        }
+        .feature ion-icon {
+            font-size: 50px;
+            color: #ff5722;
+            margin-bottom: 20px;
+        }
+        .feature h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .feature p {
+            font-size: 16px;
+            color: #555;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: #ff5722;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ShipMate</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="#" onclick="navigateTo('myorders')">My Orders</a></li>
+                <li><a href="#" onclick="navigateTo('account')">Account</a></li>
+                <li><a href="#" onclick="navigateTo('services')">Services</a></li>
+                <li><a href="#" onclick="navigateTo('login')">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main-section">
+        <h1>Welcome to <span style="color: #ffccbc;">ShipMate</span></h1>
+        <p>Your trusted partner for fast and reliable deliveries.</p>
+        <button class="btn" onclick="navigateTo('myorders')">Track Your Orders</button>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <h3>Manage Orders</h3>
+            <p>Easily track, update, and view your shipping history all in one place.</p>
+        </div>
+        <div class="feature">
+            <ion-icon name="person-outline"></ion-icon>
+            <h3>Personalized Account</h3>
+            <p>Update your details and get tailored services based on your needs.</p>
+        </div>
+        <div class="feature">
+            <ion-icon name="rocket-outline"></ion-icon>
+            <h3>Speedy Deliveries</h3>
+            <p>Experience top-notch delivery services with lightning-fast speed.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 ShipMate. All rights reserved. | <a href="#" onclick="navigateTo('privacy')">Privacy Policy</a> | <a href="#" onclick="navigateTo('terms')">Terms of Service</a></p>
+    </footer>
+    <script>
+        function navigateTo(page) {
+            if (page === 'myorders') {
+                window.location.href = "user-orders";
+            } else if (page === 'account') {
+                window.location.href = "account";
+            } else if (page === 'services') {
+                window.location.href = "services";
+            } else if (page === 'login') {
+                window.location.href = "login";
+            } else if (page === 'home') {
+                window.location.href = "home";
+            }
+        }
+    </script>
+</body>
+</html>

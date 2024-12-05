@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+        #ordersList {
+            margin-top: 20px;
+            white-space: pre-wrap; /* Preserve whitespace for JSON */
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Orders</h1>
+    <div class="error" id="errorMessage"></div>
+    <div class="success" id="successMessage"></div>
+    <button id="getOrdersButton">Get All Orders</button>
+    <div id="ordersList"></div>
+
+    <script>
+        document.getElementById('getOrdersButton').addEventListener('click', async function() {
+            try {
+                const response = await fetch('http://localhost:3000/orders', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem('token')
+                    }
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    // Formatează comenzile într-o listă
+                    const ordersHtml = data.map(order => `Order: ${order.numberOfTrucks} trucks, ${order.numberOfPallets} pallets, ${order.weightInTons} tons, Route: ${order.route} km - Price: $${order.price}`).join('<br>');
+                    document.getElementById('ordersList').innerHTML = ordersHtml;
+                    document.getElementById('errorMessage').innerText = '';
+                } else {
+                    document.getElementById('errorMessage').innerText = data.detail;
+                    document.getElementById('ordersList').innerText = '';
+                }
+            } catch (error) {
+                document.getElementById('errorMessage').innerText = 'An error occurred: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

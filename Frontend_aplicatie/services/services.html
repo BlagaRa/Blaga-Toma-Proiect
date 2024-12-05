@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipmate Services</title>
+    <style>
+        /* Resetări și stilizare de bază */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Fundal cu imagine */
+        .background {
+            background: url("static/imagine_interfata.jpeg") no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Suprapunere transparentă */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+            z-index: 1;
+        }
+
+        /* Conținut principal */
+        .content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Buton call-to-action */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            color: #fff;
+            font-size: 1.2em;
+            background: #f39c12;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #d35400;
+        }
+
+        /* Secțiunea Services */
+        #services {
+            padding: 60px 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px;
+            width: 300px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Secțiunea de fundal -->
+    <div class="background">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Shipmate Services</h1>
+            <p>We deliver your dreams with speed and precision. Explore our wide range of shipping solutions tailored for your needs.</p>
+            <!-- Buton care derulează la secțiunea Services -->
+            <button class="btn" id="exploreBtn">Explore Services</button>
+        </div>
+    </div>
+
+    <!-- Secțiunea Services -->
+    <div id="services">
+        <h2>Our Services</h2>
+        <p>Explore the services we offer to make your shipping experience seamless and stress-free.</p>
+        <div class="services">
+            <div class="service-card">
+                <h3>Express Shipping</h3>
+                <p>Fast and secure delivery within 1-2 business days.</p>
+            </div>
+            <div class="service-card">
+                <h3>Standard Shipping</h3>
+                <p>Cost-effective delivery for your non-urgent shipments.</p>
+            </div>
+            <div class="service-card">
+                <h3>International Shipping</h3>
+                <p>Global solutions to connect your business to the world.</p>
+            </div>
+            <div class="service-card">
+                <h3>Tracking Services</h3>
+                <p>Real-time updates and detailed tracking for your packages.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Shipmate. All rights reserved. | <a href="#privacy-policy">Privacy Policy</a>
+    </footer>
+
+    <!-- Scroll lin cu JavaScript -->
+    <script>
+        document.getElementById('exploreBtn').addEventListener('click', function() {
+            const servicesSection = document.getElementById("services");
+            servicesSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

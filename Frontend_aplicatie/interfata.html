@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShipMate</title>
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/ionicons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', Helvetica, sans-serif;
+        }
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .main {
+            width: 100%;
+            min-height: 120vh; /* Crește înălțimea secțiunii principale */
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("static/imagine_interfata.jpeg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px; /* Spațiu mai generos pentru o bară mai aerisită */
+            background: rgba(0, 0, 0, 0.7); /* Fundal mai vizibil */
+            font-size: 18px; /* Dimensiune mai mare pentru text */
+        }
+        .logo {
+            font-size: 32px; /* Dimensiune mai mare pentru logo */
+            font-weight: bold;
+            color: #ff5722;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        .menu ul {
+            display: flex;
+            list-style: none;
+        }
+        .menu ul li {
+            margin-left: 40px; /* Crește spațiul dintre elemente */
+        }
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px; /* Crește dimensiunea textului */
+            font-weight: bold; /* Face textul mai pronunțat */
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adaugă un ușor contur */
+        }
+        .menu ul li a:hover {
+            color: #ff5722;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+        }
+        .srch {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+            font-size: 14px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+            color: white;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #e64a19;
+        }
+        .content {
+            max-width: 800px;
+            margin: 250px auto 0 auto; /* Crește spațiul dintre partea de sus și text */
+            text-align: center;
+            color: white;
+        }
+        .content h1 {
+            font-size: 56px; /* Crește dimensiunea textului principal */
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        .content span {
+            color: #ff5722;
+        }
+        .content p {
+            font-size: 20px; /* Crește dimensiunea textului secundar */
+            line-height: 1.8;
+            color: #ddd;
+        }
+        .footer {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #ff5722;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        .footer a:hover {
+            color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <h2 class="logo">ShipMate</h2>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" onclick="navigateTo('services')">Service</a></li>
+                    <li><a href="#" onclick="navigateTo('myorders')">My Orders</a></li>
+                    <li><a href="#" onclick="navigateTo('login')">Login</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="text" placeholder="Search">
+                <button class="btn">Search</button>
+            </div>
+        </div>
+        <div class="content">
+            <!-- Main Heading -->
+            <h1>ShipMate: Delivering with <span>Speed</span> &amp; <span>Reliability</span></h1>
+            <p>"Delivering your packages with speed and reliability, every step of the way!"</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 ShipMate. All rights reserved. <a href="#" onclick="navigateTo('privacy')">Privacy Policy</a> | <a href="#" onclick="navigateTo('terms')">Terms of Service</a></p>
+    </div>
+    <script>
+        function navigateTo(page){
+        if(page==='login'){
+            window.location.href="templates";
+        }
+        if(page==='myorders'){
+            window.location.href="user-orders"
+        }
+        if(page==='services'){
+            window.location.href="services"
+        }
+    }
+    </script>
+</body>
+</html>
+
